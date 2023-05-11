@@ -1,0 +1,18 @@
+<h1>Tus contactos</h1>
+
+<!-- Listar los contactos y poder navegar a clickear uno de ellos al detalle -->
+<div *ngFor="let contacto of listaContactos; let i = index">
+    <div routerLink="{{ contacto.id }}" [state]="{data: contacto, filtro: filtroGenero}">
+        <h6 class="detalle">{{ contacto.nombre }}</h6>
+        <button (click)="volverAHome(contacto)">Seleccionar como amigue invisible</button>
+    </div>
+</div>
+<ng-container *ngIf="filtroGenero == 'Femenino' || filtroGenero == 'Masculino' || filtroGenero == 'No binarie'; else listaCompleta">
+    <p>Mostrando amigues de genero "{{filtroGenero}}"</p>
+</ng-container>
+<ng-template #listaCompleta>
+    <p>Mostrando lista de contactos completa</p>
+</ng-template>
+
+<a routerLink="/home">Volver</a>
+

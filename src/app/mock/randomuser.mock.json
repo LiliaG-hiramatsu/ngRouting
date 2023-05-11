@@ -1,0 +1,66 @@
+{
+    "results": [
+        {
+            "gender": "male",
+            "name": {
+                "title": "Mr",
+                "first": "Ed",
+                "last": "Gibson"
+            },
+            "location": {
+                "street": {
+                    "number": 9476,
+                    "name": "The Grove"
+                },
+                "city": "Oranmore",
+                "state": "Kerry",
+                "country": "Ireland",
+                "postcode": 61325,
+                "coordinates": {
+                    "latitude": "2.0772",
+                    "longitude": "-68.4705"
+                },
+                "timezone": {
+                    "offset": "+5:45",
+                    "description": "Kathmandu"
+                }
+            },
+            "email": "ed.gibson@example.com",
+            "login": {
+                "uuid": "45cfeb59-e10e-4e8b-80bb-083a613be918",
+                "username": "silverpeacock126",
+                "password": "1969",
+                "salt": "6hd54HRH",
+                "md5": "e88beb6fce1a86e1cbbd3ae584ba6a98",
+                "sha1": "090cfb4e67ea0d5759ded78d3b9c066458edae41",
+                "sha256": "7b103822dc390c26029a29352d429e6072867be790ff6c860f51031b4e2b7651"
+            },
+            "dob": {
+                "date": "1974-03-17T23:50:35.986Z",
+                "age": 49
+            },
+            "registered": {
+                "date": "2006-10-31T16:26:43.046Z",
+                "age": 16
+            },
+            "phone": "041-127-9605",
+            "cell": "081-510-8983",
+            "id": {
+                "name": "PPS",
+                "value": "7850407T"
+            },
+            "picture": {
+                "large": "https://randomuser.me/api/portraits/men/67.jpg",
+                "medium": "https://randomuser.me/api/portraits/med/men/67.jpg",
+                "thumbnail": "https://randomuser.me/api/portraits/thumb/men/67.jpg"
+            },
+            "nat": "IE"
+        }
+    ],
+    "info": {
+        "seed": "b46d79cec78833ad",
+        "results": 1,
+        "page": 1,
+        "version": "1.4"
+    }
+}
