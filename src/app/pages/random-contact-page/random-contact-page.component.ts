@@ -12,17 +12,17 @@ export class RandomContactPageComponent implements OnInit {
 
   contact: IRandomContact | undefined;
 
-  constructor(private randoUserService: RandomUserService) { }
+  constructor(private randomUserService: RandomUserService) { }
 
   ngOnInit(): void {
-    this.randoUserService.obtenerRandomContact().subscribe((response: Results) => {
+    this.randomUserService.obtenerRandomContact().subscribe((response: Results) => {
       this.contact =  response.results[0];
       // Se lo pasaremos al RandomContact
     });
   }
 
   obtenerNuevoContacto() {
-    this.randoUserService.obtenerRandomContact().subscribe(
+    this.randomUserService.obtenerRandomContact().subscribe(
       {
         next: (response: Results) => {
           this.contact = response.results[0];
@@ -34,9 +34,9 @@ export class RandomContactPageComponent implements OnInit {
   }
 
   obtenerListaContactos(n: number) {
-    this.randoUserService.obtenerRandomContacts(n).subscribe(
+    this.randomUserService.obtenerRandomContacts(n).subscribe(
       {
-        next: (response: Results[]) => {
+        next: (response: Results) => {
           console.log(response);
         },
         error: (error) => console.error(`${error}`),

@@ -7,41 +7,54 @@ import { ContactDetailPageComponent } from './pages/contact-detail-page/contact-
 import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
 import { AuthGuard } from './guards/auth.guard';
 import { RandomContactPageComponent } from './pages/random-contact-page/random-contact-page.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { TasksPageComponent } from './pages/tasks-page/tasks-page.component';
 
 const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'home'
+    redirectTo: 'dashboard'
   },
   {
     path: 'login',
     component: LoginPageComponent
   },
   {
-    path: 'home',
-    component: HomePageComponent,
+    path: 'dashboard',
+    component: DashboardComponent,
+    canActivate: [AuthGuard],
     children: [
       {
-        path: 'hijo',
-        component: HomePageComponent
+        path: '',
+        component: HomePageComponent,
+        canActivate: [AuthGuard]
+      },
+      {
+        path: 'contacts',
+        component: ContactsPageComponent,
+        canActivate: [ AuthGuard ]
+      },
+      {
+        path: 'contacts/:id', // es una manera de pasar parametros a una ruta concreta
+        component: ContactDetailPageComponent,
+        canActivate: [ AuthGuard ]
+      },
+      {
+        path: 'random',
+        component: RandomContactPageComponent,
+        canActivate: [AuthGuard]
+      },
+      {
+        path: 'tasks',
+        component: TasksPageComponent,
+        canActivate: [ AuthGuard ]
       }
-    ],
-    canActivate: [AuthGuard]
+    ]
   },
   {
-    path: 'contacts',
-    component: ContactsPageComponent,
-    canActivate: [ AuthGuard ]
-  },
-  {
-    path: 'contacts/:id', // es una manera de pasar parametros a una ruta concreta
-    component: ContactDetailPageComponent,
-    canActivate: [ AuthGuard ]
-  },
-  {
-    path: 'random',
-    component: RandomContactPageComponent,
+    path: 'home',
+    component: HomePageComponent,
     canActivate: [AuthGuard]
   },
   {

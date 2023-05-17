@@ -12,10 +12,10 @@ export class ContactService {
   constructor() { }
 
   obtenerContactos(genero?:string): Promise<IContacto[]> {
-    if (genero == 'Masculino' || genero == 'Femenino' || genero == 'No binarie') {
+    if (genero == 'male' || genero == 'female') {
       let listaFiltrada: IContacto[] = this.listaContactos.filter((contacto) => contacto.genero == genero);
       return Promise.resolve(listaFiltrada);
-    } else if (genero == 'todes') {
+    } else if (genero == 'todos') {
       return Promise.resolve(this.listaContactos);
     }
     else {
